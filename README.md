@@ -1,2 +1,2 @@
 # FinalGame
-Game Project
+Final game project
