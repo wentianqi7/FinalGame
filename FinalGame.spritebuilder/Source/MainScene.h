@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "Minions.h"
 #import "Enemy.h"
+#import "Bones.h"
 
 @interface MainScene : CCNode {
 	CCPhysicsNode *_physicsNode;

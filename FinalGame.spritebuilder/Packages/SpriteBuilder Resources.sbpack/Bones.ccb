@@ -81,66 +81,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>12.890624046325684</real>
-							<real>32.562492370605469</real>
+							<real>8.0315990447998047</real>
+							<real>19.00244140625</real>
 						</array>
 						<array>
-							<real>16.203121185302734</real>
-							<real>94.687492370605469</real>
+							<real>8.5158834457397461</real>
+							<real>45.430030822753906</real>
 						</array>
 						<array>
-							<real>119.57818603515625</real>
-							<real>86.890625</real>
+							<real>117.73731994628906</real>
+							<real>46.461032867431641</real>
 						</array>
 						<array>
-							<real>239.32818603515625</real>
-							<real>97.765625</real>
-						</array>
-						<array>
-							<real>239.48443603515625</real>
-							<real>38.437503814697266</real>
-						</array>
-						<array>
-							<real>119.06256103515625</real>
-							<real>51.562496185302734</real>
+							<real>118.12134552001953</real>
+							<real>19.630502700805664</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>119.57818603515625</real>
-								<real>86.890625</real>
+								<real>118.12134552001953</real>
+								<real>19.630502700805664</real>
 							</array>
 							<array>
-								<real>16.203121185302734</real>
-								<real>94.687492370605469</real>
+								<real>117.73731994628906</real>
+								<real>46.461032867431641</real>
 							</array>
 							<array>
-								<real>12.890624046325684</real>
-								<real>32.562492370605469</real>
+								<real>8.5158834457397461</real>
+								<real>45.430030822753906</real>
 							</array>
 							<array>
-								<real>119.06256103515625</real>
-								<real>51.562496185302734</real>
-							</array>
-						</array>
-						<array>
-							<array>
-								<real>119.06256103515625</real>
-								<real>51.562496185302734</real>
-							</array>
-							<array>
-								<real>239.48443603515625</real>
-								<real>38.437503814697266</real>
-							</array>
-							<array>
-								<real>239.32818603515625</real>
-								<real>97.765625</real>
-							</array>
-							<array>
-								<real>119.57818603515625</real>
-								<real>86.890625</real>
+								<real>8.0315990447998047</real>
+								<real>19.00244140625</real>
 							</array>
 						</array>
 					</array>
@@ -187,8 +161,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.25</real>
-							<real>0.25</real>
+							<real>0.40019130706787109</real>
+							<real>0.40019130706787109</real>
 							<false/>
 							<integer>0</integer>
 						</array>

@@ -12,6 +12,7 @@
 		6828A5EC1ADF36D300FB8339 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828A5EB1ADF36D300FB8339 /* Enemy.m */; };
 		6828A5F31ADF491F00FB8339 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828A5F21ADF491F00FB8339 /* Unit.m */; };
 		6828A5FB1ADF6E4200FB8339 /* bone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6828A5FA1ADF6E4200FB8339 /* bone.png */; };
+		68B1342B1AF2C3E1002B4A8C /* Catapult.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B1342A1AF2C3E1002B4A8C /* Catapult.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -91,6 +92,8 @@
 		6828A5F11ADF491F00FB8339 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = Source/Unit.h; sourceTree = "<group>"; };
 		6828A5F21ADF491F00FB8339 /* Unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Unit.m; path = Source/Unit.m; sourceTree = "<group>"; };
 		6828A5FA1ADF6E4200FB8339 /* bone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bone.png; sourceTree = "<group>"; };
+		68B134291AF2C3E1002B4A8C /* Catapult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Catapult.h; path = Source/Catapult.h; sourceTree = "<group>"; };
+		68B1342A1AF2C3E1002B4A8C /* Catapult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Catapult.m; path = Source/Catapult.m; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 				6828A5EB1ADF36D300FB8339 /* Enemy.m */,
 				6828A5F11ADF491F00FB8339 /* Unit.h */,
 				6828A5F21ADF491F00FB8339 /* Unit.m */,
+				68B134291AF2C3E1002B4A8C /* Catapult.h */,
+				68B1342A1AF2C3E1002B4A8C /* Catapult.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				6828A5F31ADF491F00FB8339 /* Unit.m in Sources */,
 				00A049D21ADDFD33004A9099 /* Bones.m in Sources */,
+				68B1342B1AF2C3E1002B4A8C /* Catapult.m in Sources */,
 				0026F0F81ADEFC4B00003826 /* Minions.m in Sources */,
 				6828A5EC1ADF36D300FB8339 /* Enemy.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,

@@ -1,13 +1,17 @@
 #import "MainScene.h"
+#import "CCPhysics+ObjectiveChipmunk.h"
 
 @implementation MainScene {
 	CCSprite *_addBoneArea1, *_addBoneArea2;
 	CCSprite *tempBone;
+	CCSprite *_cloud;
+	CCNode *_catapult;
 	int angle;
 }
 
 - (void)didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
+	_physicsNode.debugDraw = TRUE;
 }
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
@@ -57,6 +61,13 @@
 	[_bones addObject:bone];
 }
 
+- (void)addCatapult:(CGPoint)curPosition {
+	if (_catapult != nil) return;
+	_catapult = [CCBReader load:@"Catapult"];
+	_catapult.position = curPosition;
+	[_physicsNode addChild:_catapult];
+}
+
 - (void) minionButtonPressed {
     CCNode *minion = [CCBReader load:@"Minions"];
     minion.position = ccp(0, _ground1.boundingBox.size.height + 11);
@@ -80,6 +91,7 @@
 	screeSize = [CCDirector sharedDirector].viewSize;
 	_popLabel.visible = true;
 	_enemyInterval = 0.f;
+	_catapult = nil;
 }
 
 - (void) removeFromList {
@@ -98,7 +110,7 @@
 - (void)update:(CCTime)delta {
 	// add enemy minion
 	_enemyInterval += delta;
-	if (_enemyInterval > 2.f) {
+	if (_enemyInterval > 20.f) {
 		[self addEnemy];
 		_enemyInterval = 0.f;
 	}
@@ -137,6 +149,15 @@
 	
 	[self removeFromList];
 	[self updatePopulation];
+	
+	// check if any bone has reach the target height
+	for (Bones *bone in _bones) {
+		if (bone.position.y >= _cloud.position.y - 20) {
+			// current bone has reach the top
+			[self addCatapult:bone.position];
+			break;
+		}
+	}
 }
 
 - (void)updatePopulation {
