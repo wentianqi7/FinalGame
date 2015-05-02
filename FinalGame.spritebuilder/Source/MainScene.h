@@ -11,6 +11,7 @@
 #import "Minions.h"
 #import "Enemy.h"
 #import "Bones.h"
+#import "Catapult.h"
 
 @interface MainScene : CCNode {
 	CCPhysicsNode *_physicsNode;

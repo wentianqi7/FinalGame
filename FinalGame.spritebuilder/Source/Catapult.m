@@ -10,4 +10,12 @@
 
 @implementation Catapult
 
+- (CCNode *) getArm {
+    return _catapultArm;
+}
+
+- (CCNode *) getJointNode {
+    return _mouseJointNode;
+}
+
 @end

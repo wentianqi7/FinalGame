@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0026F0F81ADEFC4B00003826 /* Minions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0026F0F71ADEFC4B00003826 /* Minions.m */; };
+		002AEFFB1AF47B25005547AC /* Stone.m in Sources */ = {isa = PBXBuildFile; fileRef = 002AEFFA1AF47B25005547AC /* Stone.m */; };
 		00A049D21ADDFD33004A9099 /* Bones.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A049D11ADDFD33004A9099 /* Bones.m */; };
 		6828A5EC1ADF36D300FB8339 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828A5EB1ADF36D300FB8339 /* Enemy.m */; };
 		6828A5F31ADF491F00FB8339 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828A5F21ADF491F00FB8339 /* Unit.m */; };
@@ -85,6 +86,8 @@
 /* Begin PBXFileReference section */
 		0026F0F61ADEFC4B00003826 /* Minions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Minions.h; path = Source/Minions.h; sourceTree = "<group>"; };
 		0026F0F71ADEFC4B00003826 /* Minions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Minions.m; path = Source/Minions.m; sourceTree = "<group>"; };
+		002AEFF91AF47B25005547AC /* Stone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stone.h; path = Source/Stone.h; sourceTree = "<group>"; };
+		002AEFFA1AF47B25005547AC /* Stone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stone.m; path = Source/Stone.m; sourceTree = "<group>"; };
 		00A049D01ADDFD33004A9099 /* Bones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bones.h; path = Source/Bones.h; sourceTree = "<group>"; };
 		00A049D11ADDFD33004A9099 /* Bones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Bones.m; path = Source/Bones.m; sourceTree = "<group>"; };
 		6828A5EA1ADF36D300FB8339 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Source/Enemy.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				6828A5F21ADF491F00FB8339 /* Unit.m */,
 				68B134291AF2C3E1002B4A8C /* Catapult.h */,
 				68B1342A1AF2C3E1002B4A8C /* Catapult.m */,
+				002AEFF91AF47B25005547AC /* Stone.h */,
+				002AEFFA1AF47B25005547AC /* Stone.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				002AEFFB1AF47B25005547AC /* Stone.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				6828A5F31ADF491F00FB8339 /* Unit.m in Sources */,
 				00A049D21ADDFD33004A9099 /* Bones.m in Sources */,

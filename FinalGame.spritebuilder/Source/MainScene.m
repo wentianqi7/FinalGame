@@ -5,13 +5,19 @@
 	CCSprite *_addBoneArea1, *_addBoneArea2;
 	CCSprite *tempBone;
 	CCSprite *_cloud;
-	CCNode *_catapult;
+	Catapult *_catapult;
+    CCNode *_catapultArm;
+    CCNode *_mouseJointNode;
+    CCNode *_god;
+    CCPhysicsJoint *_mouseJoint;
+    CCNode *_currentCannon;
 	int angle;
 }
 
 - (void)didLoadFromCCB {
     self.userInteractionEnabled = TRUE;
 	_physicsNode.debugDraw = TRUE;
+    _mouseJointNode.physicsBody.collisionMask = @[];
 }
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
@@ -34,14 +40,19 @@
 		angle = 0;
 		tempBone.position = touchLocation;
 		[self addChild:tempBone];
-	}
+    } else if (CGRectContainsPoint([_catapultArm boundingBox], ccpSub(touchLocation, _catapult.position))) {
+        _mouseJointNode.position = ccpSub(touchLocation, _catapult.position);
+        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0,0) anchorB:ccp(11, 66) restLength:0.f stiffness:3000.f damping:150.f];
+    }
 }
 
 - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
 	CGPoint touchLocation = [touch locationInNode:self];
 	if (tempBone != nil) {
 		tempBone.position = touchLocation;
-	}
+    } else if (_mouseJoint != nil) {
+        _mouseJointNode.position = ccpSub(touchLocation, _catapult.position);
+    }
 }
 
 - (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
@@ -50,7 +61,21 @@
 		[self addBoneTouchLocation:touchLocation:angle];
 		[self removeChild:tempBone];
 		tempBone = nil;
-	}
+    } else if (_mouseJoint != nil) {
+        [self releaseCatapult];
+    }
+}
+
+- (void)releaseCatapult {
+    [_mouseJoint invalidate];
+    _mouseJoint = nil;
+    
+    _currentCannon = [CCBReader load:@"Stone"];
+    CGPoint cannonPosition = ccpAdd(_catapult.position, _catapultArm.position);
+    cannonPosition = ccpAdd(cannonPosition, ccp(5, 5));
+    _currentCannon.position = cannonPosition;
+    [_physicsNode addChild:_currentCannon];
+    _currentCannon.physicsBody.allowsRotation = TRUE;
 }
 
 - (void)addBoneTouchLocation:(CGPoint)touchLocation:(int)rotate {
@@ -63,8 +88,10 @@
 
 - (void)addCatapult:(CGPoint)curPosition {
 	if (_catapult != nil) return;
-	_catapult = [CCBReader load:@"Catapult"];
+	_catapult = (Catapult *)[CCBReader load:@"Catapult"];
 	_catapult.position = curPosition;
+    _catapultArm = [_catapult getArm];
+    _mouseJointNode = [_catapult getJointNode];
 	[_physicsNode addChild:_catapult];
 }
 
@@ -92,6 +119,7 @@
 	_popLabel.visible = true;
 	_enemyInterval = 0.f;
 	_catapult = nil;
+    _mouseJoint = nil;
 }
 
 - (void) removeFromList {
