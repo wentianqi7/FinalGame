@@ -14,6 +14,9 @@
 		6828A5F31ADF491F00FB8339 /* Unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6828A5F21ADF491F00FB8339 /* Unit.m */; };
 		6828A5FB1ADF6E4200FB8339 /* Bones in Resources */ = {isa = PBXBuildFile; fileRef = 6828A5FA1ADF6E4200FB8339 /* Bones */; };
 		68B1342B1AF2C3E1002B4A8C /* Catapult.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B1342A1AF2C3E1002B4A8C /* Catapult.m */; };
+		68EB1E911AF5F85D001BFBAC /* Woods in Resources */ = {isa = PBXBuildFile; fileRef = 68EB1E901AF5F85D001BFBAC /* Woods */; };
+		68EB1E971AF5F864001BFBAC /* Steels in Resources */ = {isa = PBXBuildFile; fileRef = 68EB1E961AF5F864001BFBAC /* Steels */; };
+		68EB1E9A1AF61CDD001BFBAC /* Materials.m in Sources */ = {isa = PBXBuildFile; fileRef = 68EB1E991AF61CDD001BFBAC /* Materials.m */; };
 		68FC884D1AF5521800761504 /* Tower.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC884C1AF5521800761504 /* Tower.m */; };
 		68FC88541AF58EF300761504 /* GameoverBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC88531AF58EF300761504 /* GameoverBox.m */; };
 		68FC88561AF596A900761504 /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 68FC88551AF596A900761504 /* win.png */; };
@@ -21,8 +24,6 @@
 		68FC885C1AF5A85F00761504 /* MapScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC885B1AF5A85F00761504 /* MapScene.m */; };
 		68FC88621AF5BC8D00761504 /* GameProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC88611AF5BC8D00761504 /* GameProperty.m */; };
 		68FC88651AF5BFB300761504 /* Steels.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC88641AF5BFB300761504 /* Steels.m */; };
-		68FC88671AF5C28E00761504 /* Steels in Resources */ = {isa = PBXBuildFile; fileRef = 68FC88661AF5C28E00761504 /* Steels */; };
-		68FC88691AF5C3C800761504 /* Woods in Resources */ = {isa = PBXBuildFile; fileRef = 68FC88681AF5C3C800761504 /* Woods */; };
 		68FC886C1AF5C57600761504 /* Woods.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC886B1AF5C57600761504 /* Woods.m */; };
 		8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8392007918EE8E3300B6C429 /* GLKit.framework */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
@@ -107,6 +108,10 @@
 		6828A5FA1ADF6E4200FB8339 /* Bones */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bones; sourceTree = "<group>"; };
 		68B134291AF2C3E1002B4A8C /* Catapult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Catapult.h; path = Source/Catapult.h; sourceTree = "<group>"; };
 		68B1342A1AF2C3E1002B4A8C /* Catapult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Catapult.m; path = Source/Catapult.m; sourceTree = "<group>"; };
+		68EB1E901AF5F85D001BFBAC /* Woods */ = {isa = PBXFileReference; lastKnownFileType = file; path = Woods; sourceTree = "<group>"; };
+		68EB1E961AF5F864001BFBAC /* Steels */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steels; sourceTree = "<group>"; };
+		68EB1E981AF61CDD001BFBAC /* Materials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Materials.h; path = Source/Materials.h; sourceTree = "<group>"; };
+		68EB1E991AF61CDD001BFBAC /* Materials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Materials.m; path = Source/Materials.m; sourceTree = "<group>"; };
 		68FC884B1AF5521800761504 /* Tower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tower.h; path = Source/Tower.h; sourceTree = "<group>"; };
 		68FC884C1AF5521800761504 /* Tower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tower.m; path = Source/Tower.m; sourceTree = "<group>"; };
 		68FC88521AF58EF300761504 /* GameoverBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameoverBox.h; path = Source/GameoverBox.h; sourceTree = "<group>"; };
@@ -120,8 +125,6 @@
 		68FC88611AF5BC8D00761504 /* GameProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameProperty.m; path = Source/GameProperty.m; sourceTree = "<group>"; };
 		68FC88631AF5BFB300761504 /* Steels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Steels.h; path = Source/Steels.h; sourceTree = "<group>"; };
 		68FC88641AF5BFB300761504 /* Steels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Steels.m; path = Source/Steels.m; sourceTree = "<group>"; };
-		68FC88661AF5C28E00761504 /* Steels */ = {isa = PBXFileReference; lastKnownFileType = file; path = Steels; sourceTree = "<group>"; };
-		68FC88681AF5C3C800761504 /* Woods */ = {isa = PBXFileReference; lastKnownFileType = file; path = Woods; sourceTree = "<group>"; };
 		68FC886A1AF5C57600761504 /* Woods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Woods.h; path = Source/Woods.h; sourceTree = "<group>"; };
 		68FC886B1AF5C57600761504 /* Woods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Woods.m; path = Source/Woods.m; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -223,6 +226,8 @@
 				68FC886B1AF5C57600761504 /* Woods.m */,
 				68FC88631AF5BFB300761504 /* Steels.h */,
 				68FC88641AF5BFB300761504 /* Steels.m */,
+				68EB1E981AF61CDD001BFBAC /* Materials.h */,
+				68EB1E991AF61CDD001BFBAC /* Materials.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -300,8 +305,8 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				68FC88681AF5C3C800761504 /* Woods */,
-				68FC88661AF5C28E00761504 /* Steels */,
+				68EB1E961AF5F864001BFBAC /* Steels */,
+				68EB1E901AF5F85D001BFBAC /* Woods */,
 				68FC88551AF596A900761504 /* win.png */,
 				B73789911807667A0076A88C /* Icons */,
 				6828A5FA1ADF6E4200FB8339 /* Bones */,
@@ -420,8 +425,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EB1E971AF5F864001BFBAC /* Steels in Resources */,
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
-				68FC88671AF5C28E00761504 /* Steels in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				68FC88561AF596A900761504 /* win.png in Resources */,
@@ -429,13 +434,13 @@
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
-				68FC88691AF5C3C800761504 /* Woods in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
+				68EB1E911AF5F85D001BFBAC /* Woods in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 				6828A5FB1ADF6E4200FB8339 /* Bones in Resources */,
@@ -466,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EB1E9A1AF61CDD001BFBAC /* Materials.m in Sources */,
 				002AEFFB1AF47B25005547AC /* Stone.m in Sources */,
 				68FC88541AF58EF300761504 /* GameoverBox.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,

@@ -110,7 +110,7 @@
 						<key>type</key>
 						<string>Check</string>
 						<key>value</key>
-						<false/>
+						<true/>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -166,7 +166,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready1.png</string>
+							<string>GameAssets/minion/enemy/BossImg[7].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -213,8 +213,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -343,7 +341,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready2.png</string>
+							<string>GameAssets/minion/enemy/BossImg[6].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -518,7 +516,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready3.png</string>
+							<string>GameAssets/minion/enemy/BossImg[5].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -693,7 +691,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready4.png</string>
+							<string>GameAssets/minion/enemy/BossImg[4].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -740,6 +738,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -867,7 +867,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>1</real>
+			<real>0.033333335071802139</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

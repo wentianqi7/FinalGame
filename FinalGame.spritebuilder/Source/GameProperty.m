@@ -10,6 +10,8 @@
 
 @implementation GameProperty
 static NSString *_material = @"Bones";
+static float enemyDensity  = 10.f;
+static int price = 300;
 
 + (NSString *)getMaterial {
 	return _material;
@@ -17,6 +19,22 @@ static NSString *_material = @"Bones";
 
 + (void)setMaterial:(NSString *)name {
 	_material = name;
+}
+
++ (float)getEnemyInterval {
+	return enemyDensity;
+}
+
++ (void)setEnemyInterval:(float)density {
+	enemyDensity = density;
+}
+
++ (int)getPrice {
+	return price;
+}
+
++ (void)setPrice:(int)amount {
+	price = amount;
 }
 
 @end

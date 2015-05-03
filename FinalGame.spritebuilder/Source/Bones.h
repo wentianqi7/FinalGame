@@ -7,8 +7,9 @@
 //
 
 #import "CCSprite.h"
+#import "Materials.h"
 
-@interface Bones : CCSprite
+@interface Bones : Materials
 + (int)getPrice;
 
 @end

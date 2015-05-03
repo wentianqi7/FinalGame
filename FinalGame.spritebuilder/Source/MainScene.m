@@ -10,8 +10,11 @@
     CCNode *_mouseJointNode;
     CCNode *_god;
 	Tower *_tower;
+	int _price;
     CCPhysicsJoint *_mouseJoint;
     CCNode *_currentCannon;
+	bool canAddCata;
+	bool towerBuilt;
 	int angle;
 	NSString *_material;
 }
@@ -38,7 +41,7 @@
 	if (CGRectContainsPoint(_addBoneArea1.boundingBox, touchLocation)) {
 		//[self addBoneTouchLocation:touchLocation];
 		// add horizontal bone
-		if (totalGold >= [Bones getPrice]) {
+		if (totalGold >= _price) {
 			tempBone = [CCSprite spriteWithImageNamed:_material];
 			tempBone.scale = 0.2;
 			angle = 90;
@@ -48,7 +51,7 @@
 		}
 	} else if (CGRectContainsPoint(_addBoneArea2.boundingBox, touchLocation)) {
 		// add vertical bone
-		if (totalGold >= [Bones getPrice]) {
+		if (totalGold >= _price) {
 			tempBone = [CCSprite spriteWithImageNamed:_material];
 			tempBone.scale = 0.2;
 			angle = 0;
@@ -59,8 +62,6 @@
 		// create joint at catapult
         _mouseJointNode.position = ccpSub(touchLocation, _catapult.position);
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0,0) anchorB:ccp(11, 66) restLength:0.f stiffness:3000.f damping:150.f];
-	} else {
-		[self addCatapult:touchLocation];
 	}
 }
 
@@ -76,7 +77,9 @@
 - (void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
 	CGPoint touchLocation = [touch locationInNode:self];
 	if (tempBone != nil) {
-		[self addBoneTouchLocation:touchLocation:angle];
+		if (touchLocation.x > 20 && touchLocation.x < screeSize.width / 2 && touchLocation.y > 70) {
+			[self addBoneTouchLocation:touchLocation:angle];
+		}
 		[self removeChild:tempBone];
 		tempBone = nil;
     } else if (_mouseJoint != nil) {
@@ -87,32 +90,48 @@
 - (void)releaseCatapult {
     [_mouseJoint invalidate];
     _mouseJoint = nil;
-    
-    _currentCannon = [CCBReader load:@"Stone"];
-    CGPoint cannonPosition = ccpAdd(_catapult.position, _catapultArm.position);
-    cannonPosition = ccpAdd(cannonPosition, ccp(5, 5));
-    _currentCannon.position = cannonPosition;
-    [_physicsNode addChild:_currentCannon];
-    _currentCannon.physicsBody.allowsRotation = TRUE;
+	
+	if (totalGold >= 500) {
+		_currentCannon = [CCBReader load:@"Stone"];
+		CGPoint cannonPosition = ccpAdd(_catapult.position, _catapultArm.position);
+		cannonPosition = ccpAdd(cannonPosition, ccp(5, 5));
+		_currentCannon.position = cannonPosition;
+		[_physicsNode addChild:_currentCannon];
+		_currentCannon.physicsBody.allowsRotation = TRUE;
+		totalGold -= 500;
+		_goldLabel.string = [NSString stringWithFormat:@"%d", totalGold];
+	}
 }
 
 - (void)addBoneTouchLocation:(CGPoint)touchLocation:(int)rotate {
     CCNode* bone = [CCBReader load:_material];
-    bone.position = touchLocation;
+	if (touchLocation.y >= _cloud.position.y - 20) {
+		for (Materials *material in _bones) {
+			if (material.position.y >= _cloud.position.y - 40) {
+				bone.position = touchLocation;
+				break;
+			}
+			bone.position = ccp(touchLocation.x, _cloud.position.y - 21);
+		}
+	} else {
+		bone.position = touchLocation;
+	}
 	bone.rotation = rotate - 90;
     [_physicsNode addChild:bone];
 	[_bones addObject:bone];
-	totalGold -= [Bones getPrice];
+	
+	totalGold -= _price;
 	_goldLabel.string = [NSString stringWithFormat:@"%d", totalGold];
 }
 
 - (void)addCatapult:(CGPoint)curPosition {
 	if (_catapult != nil) return;
 	_catapult = (Catapult *)[CCBReader load:@"Catapult"];
-	_catapult.position = curPosition;
+	_catapult.position = ccp(curPosition.x, 200);
     _catapultArm = [_catapult getArm];
     _mouseJointNode = [_catapult getJointNode];
 	[_physicsNode addChild:_catapult];
+	canAddCata = FALSE;
 }
 
 - (void)addTower:(CGPoint)curPosition {
@@ -136,7 +155,7 @@
 
 - (void) addEnemy {
 	CCNode *enemy = [CCBReader load:@"Enemy"];
-	enemy.position = ccp(screeSize.width, _ground1.boundingBox.size.height + 11);
+	enemy.position = ccp(screeSize.width, _ground1.boundingBox.size.height + 15);
 	[_enemies addObject:enemy];
 	[self addChild:enemy];
 }
@@ -148,11 +167,13 @@
 	_bones = [[NSMutableArray alloc] init];
 	_enemies = [[NSMutableArray alloc] init];
 	screeSize = [CCDirector sharedDirector].viewSize;
-	_popLabel.visible = TRUE;
 	_goldLabel.visible = TRUE;
 	_timeLabel.visible = TRUE;
+	canAddCata = FALSE;
 	_enemyInterval = 0.f;
 	_goldInterval = 0.f;
+	_addCataInterval = 0.f;
+	_enemyDensity = [GameProperty getEnemyInterval];
 	_catapult = nil;
     _mouseJoint = nil;
 	_tower = nil;
@@ -160,8 +181,13 @@
 	totalTime = 100.f;
 	goldInc = 100;
 	isGameover = FALSE;
+	towerBuilt = FALSE;
 	_material = [GameProperty getMaterial];
-	NSLog(_material);
+	_price = [GameProperty getPrice];
+	_workers = [[NSMutableArray alloc] init];
+	[_workers addObject:_worker1];
+	[_workers addObject:_worker2];
+	[_workers addObject:_worker3];
 }
 
 - (void) removeFromList {
@@ -187,7 +213,7 @@
 	// add enemy minion
 	_enemyInterval += delta;
 	_goldInterval += delta;
-	if (_enemyInterval > 20.f) {
+	if (_enemyInterval > (_enemyDensity + ((float)rand() / RAND_MAX) * 10)) {
 		[self addEnemy];
 		_enemyInterval = 0.f;
 	}
@@ -225,15 +251,35 @@
 		}
 	}
 	
-	[self removeFromList];
-	[self updatePopulation];
+	for (Enemy *enemy in _enemies) {
+		for (CCNode *worker in _workers) {
+			if (CGRectIntersectsRect(enemy.boundingBox, worker.boundingBox)) {
+				[enemy reduceHealth];
+				if ([enemy isDead]) {
+					[_toDelete addObject:enemy];
+				}
+				[_workers removeObject:worker];
+				[worker removeFromParent];
+				break;
+			}
+		}
+	}
 	
+	[self removeFromList];	
 	// check if any material has reach the target height
-	for (CCNode *material in _bones) {
+	for (Materials *material in _bones) {
 		if (material.position.y >= _cloud.position.y - 20) {
 			// current bone has reach the top
 			[self addTower:material.position];
-			break;
+			//material.prevPos = material.position;
+		}
+	}
+	
+	// update catapult
+	if (towerBuilt) {
+		_addCataInterval += delta;
+		if (_addCataInterval > 1.f) {
+			[self addCatapult:_tower.position];
 		}
 	}
 	
@@ -249,7 +295,7 @@
 }
 
 - (void) checkGameover {
-	if (totalTime < 0.1f) {
+	if (totalTime < 0.1f || [_workers count] < 1) {
 		isGameover = TRUE;
 		_timeLabel.visible = FALSE;
 		for (int i = 0; i < 10; i++) {
@@ -272,11 +318,6 @@
 	}
 }
 
-- (void)updatePopulation {
-	_popLabel.string = [NSString stringWithFormat:@"%d", [_minions count]];
-	_popLabel.visible = true;
-}
-
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bone:(CCNode *)nodeA scene:(CCNode *)nodeB {
 	float energy = [pair totalKineticEnergy];
 	
@@ -288,12 +329,21 @@
 
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ground:(CCNode *)nodeA scene:(CCNode *)nodeB {
 	nodeB.physicsBody.type = CCPhysicsBodyTypeStatic;
+	totalGold += (int)(totalTime) * 20;
+	_goldLabel.string = [NSString stringWithFormat:@"%d", totalGold];
+	towerBuilt = TRUE;
 }
 
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ground:(CCNode *)nodeA god:(CCNode *)nodeB {
 	if (!isGameover) {
 		[self victory];
 	}
+}
+
+- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bone:(CCNode *)nodeA bone:(CCNode *)nodeB {
+	NSLog(@"bone collides bone");
+	//[_bones addObject:nodeB];
+	//[_bones addObject:nodeA];
 }
 
 - (void)boneRemoved:(CCNode *)bone {

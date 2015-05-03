@@ -130,40 +130,40 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>0.0</real>
-							<real>0.0</real>
+							<real>14.419149398803711</real>
+							<real>7.301018238067627</real>
 						</array>
 						<array>
-							<real>0.0</real>
-							<real>400</real>
+							<real>15.28569507598877</real>
+							<real>56.056930541992188</real>
 						</array>
 						<array>
-							<real>640</real>
-							<real>400</real>
+							<real>113.65465545654297</real>
+							<real>56.361480712890625</real>
 						</array>
 						<array>
-							<real>640</real>
-							<real>0.0</real>
+							<real>112.32970428466797</real>
+							<real>6.4658708572387695</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>640</real>
-								<real>0.0</real>
+								<real>112.32970428466797</real>
+								<real>6.4658708572387695</real>
 							</array>
 							<array>
-								<real>640</real>
-								<real>400</real>
+								<real>113.65465545654297</real>
+								<real>56.361480712890625</real>
 							</array>
 							<array>
-								<real>0.0</real>
-								<real>400</real>
+								<real>15.28569507598877</real>
+								<real>56.056930541992188</real>
 							</array>
 							<array>
-								<real>0.0</real>
-								<real>0.0</real>
+								<real>14.419149398803711</real>
+								<real>7.301018238067627</real>
 							</array>
 						</array>
 					</array>
@@ -210,8 +210,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.10000000149011612</real>
-							<real>0.05000000074505806</real>
+							<real>0.5</real>
+							<real>0.5</real>
 							<false/>
 							<integer>0</integer>
 						</array>

@@ -19,14 +19,17 @@
 @interface MainScene : CCNode <CCPhysicsCollisionDelegate> {
 	CCPhysicsNode *_physicsNode;
 	CCNode *_ground1;
+	CCNode *_worker1, *_worker2, *_worker3;
 	NSMutableArray *_minions;
 	NSMutableArray *_bones;
 	NSMutableArray *_enemies;
 	NSMutableArray *_toDelete;
-	CCLabelTTF *_popLabel;
+	NSMutableArray *_workers;
 	CGSize screeSize;
 	NSTimeInterval _enemyInterval;
 	NSTimeInterval _goldInterval;
+	NSTimeInterval _addCataInterval;
+	float _enemyDensity;
 	int totalGold;
 	CCLabelTTF *_goldLabel;
 	CCLabelTTF *_timeLabel;

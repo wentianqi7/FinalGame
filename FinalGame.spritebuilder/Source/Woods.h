@@ -7,7 +7,8 @@
 //
 
 #import "CCNode.h"
+#import "Materials.h"
 
-@interface Woods : CCSprite
+@interface Woods : Materials
 + (int)getPrice;
 @end

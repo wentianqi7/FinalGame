@@ -166,7 +166,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready1.png</string>
+							<string>GameAssets/minion/walk/BossImg[419].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -203,8 +203,6 @@
 					</dict>
 				</array>
 				<key>selected</key>
-				<true/>
-				<key>seqExpanded</key>
 				<true/>
 			</dict>
 			<dict>
@@ -334,7 +332,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready2.png</string>
+							<string>GameAssets/minion/walk/BossImg[418].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -370,8 +368,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>seqExpanded</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -500,7 +496,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready3.png</string>
+							<string>GameAssets/minion/walk/BossImg[417].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -536,8 +532,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>seqExpanded</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -666,7 +660,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>GameAssets/minion/ready/ready4.png</string>
+							<string>GameAssets/minion/walk/BossImg[416].png</string>
 						</array>
 					</dict>
 					<dict>
@@ -702,8 +696,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>seqExpanded</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

@@ -11,4 +11,8 @@
 @interface GameProperty : CCNode
 + (NSString *)getMaterial;
 + (void)setMaterial:(NSString *)name;
++ (float)getEnemyInterval;
++ (void)setEnemyInterval:(float)density;
++ (int)getPrice;
++ (void)setPrice:(int)amount;
 @end
