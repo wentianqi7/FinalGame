@@ -10,4 +10,5 @@
 #import "Unit.h"
 
 @interface Minions : Unit
++ (int)getPrice;
 @end

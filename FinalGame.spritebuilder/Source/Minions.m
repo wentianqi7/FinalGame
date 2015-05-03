@@ -8,9 +8,9 @@
 
 #import "Minions.h"
 
-@implementation Minions {
-	
-}
+@implementation Minions
+
+static int price = 100;
 
 - (id)init {
 	self = [super init];
@@ -22,6 +22,10 @@
 
 - (void) reduceHealth {
 	[super reduceHealth];
+}
+
++ (int)getPrice {
+	return price;
 }
 
 @end

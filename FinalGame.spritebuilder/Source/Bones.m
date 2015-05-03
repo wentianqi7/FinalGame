@@ -9,14 +9,25 @@
 #import "Bones.h"
 
 @implementation Bones
+
+static int price = 300;
+
 - (id)init {
     self = [super init];
     
     if (self) {
         CCLOG(@"Bone created");
     }
-    
+	
     return self;
+}
+
+- (void)didLoadFromCCB {
+	self.physicsBody.collisionType = @"bone";
+}
+
++ (int)getPrice {
+	return price;
 }
 
 @end

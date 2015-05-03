@@ -9,5 +9,6 @@
 #import "CCSprite.h"
 
 @interface Bones : CCSprite
++ (int)getPrice;
 
 @end

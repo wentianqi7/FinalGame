@@ -12,8 +12,11 @@
 #import "Enemy.h"
 #import "Bones.h"
 #import "Catapult.h"
+#import "Tower.h"
+#import "CCPhysics+ObjectiveChipmunk.h"
+#import "GameProperty.h"
 
-@interface MainScene : CCNode {
+@interface MainScene : CCNode <CCPhysicsCollisionDelegate> {
 	CCPhysicsNode *_physicsNode;
 	CCNode *_ground1;
 	NSMutableArray *_minions;
@@ -23,6 +26,14 @@
 	CCLabelTTF *_popLabel;
 	CGSize screeSize;
 	NSTimeInterval _enemyInterval;
+	NSTimeInterval _goldInterval;
+	int totalGold;
+	CCLabelTTF *_goldLabel;
+	CCLabelTTF *_timeLabel;
+	float totalTime;
+	int goldInc;
+	bool isGameover;
 }
+
 
 @end
